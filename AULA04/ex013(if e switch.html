@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+    <style>
+        body {
+            padding: 20px;
+            background-color: rgb(92, 94, 156);
+            color: rgb(165, 189, 255);
+            font: normal 1.5em Arial;
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>Condições</h1>
+    <h2>Condições simples</h2>
+    <code><pre>if (x > 3){
+        console.log('A variável X é maior que 3')
+    }</pre></code>
+    <h2>Condições compostas</h2>
+    <code><pre>
+        if (x == 'sim') {
+            console.log('X é igual a 'sim')
+    }
+        else {
+            console.log('x não é igual a 'sim')
+        }
+    </pre></code>
+    <h2>Condições aninhadas</h2>
+    <code><pre>
+        if (x === 20) {
+            console.log('x tem igualdade restrita a 20')
+        else if (x >= 20 && x != 30) {
+            console.log('x é maior ou igual a 20 <strong>e</strong> não é 30')
+        }
+        else if (x < 20 || x == 0) {
+            console.log('x é menor que 20 <strong>e</strong> igual a 0')
+        }
+    }
+    </pre></code>
+    <h1>Condições multiplas (expressão switch case)</h1>
+    <code><pre>
+        var agora = new Date() //puxa o dia do sistema
+        var diaSemana = agora.getDay()
+        switch (diaSemana) {
+            case 0:
+                console.log('Domingo')
+                break
+            case 1:
+                console.log('Segunda')
+                break
+            case 2:
+                console.log('Terça')
+                break
+            case 3:
+                console.log('Quarta')
+                break
+            case 4:
+                console.log('Quinta')
+                break
+            case 5:
+                console.log('Sexta')
+                break
+            case 6: 
+                console.log('Sábado')
+                break
+            default:
+                console.log('ERRO, dia inválido.')
+                break
+        }
+    </pre></code>
+
+</body>
+</html>

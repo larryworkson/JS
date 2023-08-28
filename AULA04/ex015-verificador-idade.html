@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERIFICADOR DE IDADE</title>
+    <style>
+        body {
+            background-color: #4fa3f1;
+            font: normal 1em 'Arial';
+            color: rgb(255, 255, 255);
+            line-height: 2.5em;
+        }
+        
+        .fundo {
+            width: 60%;
+            background-color: aliceblue;
+            border-radius: 15px;
+            margin: 10px auto;
+            padding: 25px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.195);
+        }
+        label {
+            color:black;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        h3 {
+            text-align: center;
+            color: black;
+        }
+        img {
+            width: 250px;
+            border-radius: 50%;
+
+        }
+        .fundo p {
+            display: inline;
+            color: black;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-size: 1.2em;
+        }
+        button {
+            font: bold 1em 'Roboto';
+            padding: 5px 20px;
+            background-color: #4fa3f1;
+            color:aliceblue;
+            border: 1px solid #2577c4;
+            border-radius: 5px;
+
+        }
+        button:hover {
+            background-color: #3e159e;
+            border: 1px solid #3a0d83;
+            transition-duration: 0.5s;
+        }
+ 
+    </style>
+
+</head>
+<body>
+    <h1>VERIFICADOR DE IDADE</h1>
+    <div class="fundo">
+        <p>Ano de nascimento: <input type="number" name="nasc" id="nasc" placeholder="1900" min="1900" max="2023"></p><br>
+        <p>Sexo: 
+            <input type="radio" name="radsex" id="mulher" value="mulher"><label for="mulher">Feminino</label>
+            <input type="radio" id="homem" name="radsex" value="homem"><label for="homem">Masculino</label><br></p>
+        <button value="verificar" onclick="clicar()">Verificar</button><br>
+        <p>Preencha os dados acima para ver o resultado</p>
+        <div id="resultado">
+            <h3 id="res"></h3>
+        </div>
+    </div>
+    <footer>
+        <p class="footer">&copy;Curso em Vídeo</p>
+    </footer>
+    <script>
+        var agora = new Date()
+        var ano = agora.getFullYear()
+        var res = window.document.querySelector('h3#res')
+        var sex = ''
+
+        function clicar() {
+            var resultado = window.document.querySelector('div#resultado')
+            var fsex = window.document.getElementsByName('radsex')
+            var nsc = window.document.getElementById('nasc').value
+            var img = document.createElement('img') //cria um elemento <img> no HTML
+            img.setAttribute('id', 'foto') //define a id da img como 'foto'
+            var idade = ano - nsc // VARIÁVEL QUE CALCULA A IDADE
+            // CONDIÇÃO PARA DEFINIR O SEXO DO USUÁRIO
+            if (fsex[1].checked) {
+                sex = 'Homem'
+            }
+            if (fsex[0].checked) {
+                sex = 'Mulher'
+            }
+            // CONDIÇÃO PARA MUDAR A IMAGEM CONFORME A IDADE
+            if (idade <= 17 && idade > 0) {
+                resultado.style.display = 'block'
+                img.setAttribute('src', 'https://i.postimg.cc/3rjc23XY/Design-sem-nome.jpg')
+                sex = 'menor'                
+            }
+            else if (idade < 35 && sex == 'Mulher') {
+                resultado.style.display = 'block'
+                img.setAttribute('src', 'https://i.postimg.cc/br4SV7bP/mulher-jovem.jpg')
+            }
+            else if (idade > 35 && sex == 'Mulher') {
+                resultado.style.display = 'block'
+                img.setAttribute('src', 'https://i.postimg.cc/0yDDFycB/msenior.jpg')
+            }
+            else if (idade < 35 && sex == 'Homem'){
+                resultado.style.display = 'block'
+                img.setAttribute('src', 'https://i.postimg.cc/tRv3Vfs2/homemjovem.jpg')
+            }
+            else if (idade > 35 && sex == 'Homem') {
+                resultado.style.display = 'block'
+                img.setAttribute('src', 'https://i.postimg.cc/bNK1mtHn/seniorman.jpg')
+            }
+
+            //condições para evitar erros
+            if (nsc >= ano || nsc == 0 || nsc < 1900) {
+                window.alert('Verifique os dados e tente novamente!')
+                resultado.style.display = 'none'
+            }
+            else {
+                resultado.style.display = 'block'
+                res.innerText = `Detectamos ${sex} com ${idade} ano (s).`
+                res.appendChild(img)
+                img.style.display = 'block'
+                img.style.margin = '10px auto 0px auto'
+            }
+                                    
+        }
+    </script>
+</body>
+</html>

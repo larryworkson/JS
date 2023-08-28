@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média escolar</title>
+</head>
+<style>
+    body {
+        padding: 20px;
+        background-color: rgb(125, 183, 165);
+        color: rgb(29, 113, 76);
+
+        font: normal 25pt 'Courier New';
+    }
+    h1 {
+        margin: 0px 0px -20px 0px;
+    }
+    form {
+        margin-top: -25px;
+
+    }
+    div#res {
+        display: none;
+        font-weight: bolder;
+        font-size: 2.5em;
+        color:rgb(77, 16, 189);
+
+    }
+    div#desc {
+        display: none;
+        margin-top:20px;
+        font-size: 1em;
+        color:rgb(16, 19, 189);
+    }
+    div#resultado {
+        display:none;
+    }
+
+
+
+    /* 
+    #FAÇA UM PROGRAMA QUE LEIA AS NOTAS DE UM ALUNO E CALCULE A MÉDIA, SE A MÉDIA FOR MAIOR OU IGUAL A 7, APROVADO, SE NÃO REPROVADO
+    */
+</style>
+<body>
+    <h1>MÉDIA ESCOLAR</h1>
+    <p>Você precisa de média maior ou igual a <strong>7.0</strong> para ser APROVADO.</p>
+    <form>
+        <input type="text" id="n1" name="n1" placeholder="1ª nota"> <!--corrigir o type para 'number'-->
+        <input type="text" id="n2" name="n2" placeholder="2ª nota">
+        <input type="text" id="n3" name="n3" placeholder="3ª nota">
+        <input type="text" id="n4" name="n4" placeholder="4ª nota">
+        <input type="button" value="Calcular" onclick="calcular()">
+    </form>
+    <div id="desc">Média final:</div>
+    <div id="res">0.00</div>
+    <div id="resultado">Resultado</div>
+    
+   <script>
+    function calcular() {
+        var n1 = Number(window.document.querySelector('input#n1').value)
+        var n2 = Number(window.document.querySelector('input#n2').value)
+        var n3 = Number(window.document.querySelector('input#n3').value)
+        var n4 = Number(window.document.querySelector('input#n4').value)
+        var res = window.document.querySelector('div#res')
+        var resp = window.document.querySelector('div#resultado')
+        var media = (n1 + n2 + n3 + n4) / 4
+        res.innerText = `${media.toFixed(2)}`
+        res.style.display = 'block'
+        desc.style.display = 'block'
+        resp.style.display = 'block'
+        media >= 7 ? res.style.color = 'rgb(55, 123, 50)': res.style.color = 'red'
+        media >= 7 ? resp.innerText = 'Aprovado' : resp.innerText = 'Reprovado'
+        media >= 7 ? resp.style.color = 'rgb(0, 93, 53)' : resp.style.color = 'rgb(201, 15, 15)'
+
+
+    }
+   </script>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    <!--<script>
+        var n1 = Number(window.prompt('Digite sua 1ª nota'))
+        var n2 = Number(window.prompt('Digite sua 2ª nota'))
+        var n3 = Number(window.prompt('Digite sua 3ª nota'))
+        var n4 = Number(window.prompt('Digite sua 4ª nota'))
+        var media = Number((n1 + n2 + n3 + n4) / 4)
+        document.write(`As notas inseridas foram:<br>
+        1ª nota: ${n1}<br>
+        2ª nota: ${n2}<br>
+        3ª nota: ${n3}<br>
+        4ª nota: ${n4}`)
+        document.write(`<h2>Sua média final é de: ${media.toFixed(1)}`)
+        var resultado = media >= 7?'Aprovado':'Reprovado'
+        document.write(`<h2>Você foi ${resultado}`)
+    </script>-->
+</body>
+</html>

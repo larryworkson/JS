@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moeda</title>
+</head>
+<style>
+    body {
+        padding: 20px;
+        background-color: rgb(125, 148, 183);
+        color: rgb(29, 32, 113);
+        font: normal 25pt 'Courier New';
+    }
+    p {
+        text-align: justify;
+    }
+    /* 
+    # crie um programa que leia valor e diga quantos dolares é possível comprar
+    */
+</style>
+<body>
+    <h1>CONVERSOR DE MOEDA</h1>
+    <script>
+        var user = window.prompt('Digite 1 para comprar U$ ou 2 de para comprar R$') //usuário define qual tipo de conversão deseja
+        var valor = Number(window.prompt('Digite quanto você tem'))
+        var res = Number(0)
+        var conversao = user == 1?res = valor / 4.929 : res = valor * 4.930
+        var tipoout = user == 1?'US$' : 'R$' //define se o resultado será em dolar ou real
+        var tipoin = user == 1?'R$' : 'US$' // define se o usuário de input em dolar ou real
+        document.write(`<h2>Com ${tipoin} ${valor.toFixed(2)} você pode comprar ${tipoout} ${res.toFixed(2)}`)
+
+        
+    </script>
+</body>
+</html>

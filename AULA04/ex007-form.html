@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTOS DOM</title>
+    <style>
+        body {
+            padding: 20px;
+            background-color: rgb(0, 123, 117);
+            color: rgb(43, 195, 167);
+            font: normal 2em Arial;
+            line-height: 1em;
+        }
+        p {
+            font-size: 1em;
+        }
+        input {
+            width: 200px;
+            font-size: 1em;
+        }
+        button {
+            width: 200px;
+            font-size: 1em;
+            background-color:rgb(139, 195, 43);
+            color: white;
+        }
+        h2 {
+           color: rgb(139, 195, 43);
+           font-size: 5em;
+        }
+        div#res {
+            margin-top: 20px;
+        }
+
+    
+
+    </style>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" name="txtn1" id="txtn1" placeholder="1º valor">+
+    <input type="number" name="txtn2" id="txtn2" placeholder="2º valor">
+    <button value="somar" onclick="somar()">Somar</button>
+    <div id="res">Resultado</div>
+    <script>
+        function somar() {
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.querySelector('input#txtn2')
+            var res = window.document.querySelector('div#res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `<p>A soma entre ${n1} e ${n2} é:<br><h2>${s}`
+
+        }
+    </script>
+</body>
+</html>

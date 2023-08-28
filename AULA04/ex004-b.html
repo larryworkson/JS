@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document write</title>
+    <style>
+        body {
+            padding: 20px;
+            background-color: rgb(92, 94, 156);
+            color: rgb(165, 189, 255);
+            font: normal 25pt Arial;
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manipulando números</h1>
+    <p><code>n.toFixed(2)</code>// coloca 2 casas depois da vírgula</p>
+    <p><code>n.toFixed(2).replace('.', ',' )</code>// troca o ponto por vírgula</p>
+    <p><code>n.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})</code>// converte o número em real do Brasil</p>
+    
+    <script>
+        var nome = window.prompt('Qual é o seu nome? ')
+        var sal = Number(window.prompt('Qual o seu salário? ')) 
+        document.write(`Olá ${nome}! Seu nome tem ${nome.length} letras<br>`)
+        document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}<br>`)
+        document.write(`Seu nome em minúsculas é ${nome.toLowerCase()}<br>`)
+        document.write(`Seu salário é de ${sal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`)
+        
+    </script>
+</body>
+</html>

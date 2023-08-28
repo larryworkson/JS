@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horas do dia</title>
+    <style>
+        body {
+            background-color: #F6C498;
+            font: normal 1em 'Arial';
+            color: white;
+        }
+        .fundo {
+            width: 60%;
+            background-color: aliceblue;
+            border-radius: 15px;
+            margin: auto;
+            padding: 25px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.147);
+    
+            
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        h3 {
+            text-align: center;
+            color: black;
+        }
+        .imagem {
+            width: 200px;
+            margin: auto;
+            padding: 30px;
+        }
+        img {
+            width: 200px;
+            border-radius: 50%;
+
+        }
+        p {
+            color: black;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+
+</head>
+<body onload="carregar()">
+    <h1>Hora do dia</h1>
+    <div class="fundo">
+        <h3>Agora são: <span id="horas"></span>
+            horas</h3>
+        <div class="imagem"><img id="img" src="https://i.postimg.cc/Qtphp024/dia.png"></div>
+        <p id="saudacao"></p>
+    </div>
+    <script>
+    function carregar() {
+        var agora = new Date()
+        var hora = agora.getHours()
+        var hr = window.document.querySelector('span#horas')
+        var img = window.document.querySelector('img#img')
+        var saud = window.document.querySelector('p#saudacao')
+        hr.innerHTML = hora
+       
+        if (hora > 0 && hora < 12) {
+            document.body.style.backgroundColor = '#DA9339'
+            img.src = 'https://i.postimg.cc/Qtphp024/dia.png'
+            saud.innerHTML = 'Bom dia!'
+
+        }
+        else if (hora >= 12 && hora < 18) {
+            document.body.style.backgroundColor = '#a05718'
+            img.src = 'https://i.postimg.cc/XNknq1cX/tarde.png'
+            saud.innerHTML = 'Boa tarde!'
+        }
+        else if (hora >= 18) {
+            document.body.style.backgroundColor = '#002244'
+            img.src = 'https://i.postimg.cc/Bnk0krs7/noite.png'
+            saud.innerHTML = 'Boa noite!'
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!--receber a distância, velocidade média, consumo médio e preço da gasolina para calcular tempo de viagem e custo médio com combustível-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custo/tempo viagem</title>
+</head>
+<body>
+    <h1>Custo de viagem</h1>
+    <form>
+        <input type="number" id="distancia" placeholder="Distância (km)">
+        <input type="number"id="velocidade" placeholder="Velocidade média">
+        <input type="number" id="consumo" placeholder="Consumo médio">
+        <input type="number" id="precogas" placeholder="Preço gasolina">
+    <input type="button" value="Calcular" id="calcular">
+    </form>
+    <div>O tempo de viagem será de aproximadamente:</div>
+    <div id="ptempo">tempo</div>
+    <div>O custo médio de combustível será de:</div>
+    <div id="pcusto">custo</div>
+    <script>
+        var calc = window.document.querySelector('input#calcular')
+        calc.addEventListener('click', calcular)
+        function calcular() {
+            var distancia = window.document.querySelector('input#distancia').value
+            var velocidade = window.document.querySelector('input#velocidade').value
+            var consumo = window.document.querySelector('input#consumo').value
+            var preco = window.document.querySelector('input#precogas').value
+            var ptempo = window.document.querySelector('div#ptempo')
+            var pcusto = window.document.querySelector('div#pcusto')
+            var min = (distancia / velocidade) * 60
+            var hr = min / 60
+            var custo = (distancia / consumo) * preco
+            ptempo.innerText = `${min.toFixed(2)} minutos (${hr.toFixed(2)} horas)`
+            pcusto.innerText = `${custo.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`
+
+        }
+    </script>
+
+</body>
+</html>

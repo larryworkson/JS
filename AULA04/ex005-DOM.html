@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            padding: 20px;
+            background-color: rgb(92, 94, 156);
+            color: rgb(165, 189, 255);
+            font: normal 25pt Arial;
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM</h1>
+    <h2>Document Object Model</h2>
+    <p>Conjunto de objetos dentro do navegador que dá acessos aos componentes do site.</p>
+
+<!-- ÁRVORE HIERÁRQUICA DOM 
+    window
+        location (url)
+        history (historico do usario)
+        document
+            html
+                head
+                    meta
+                    title
+                body
+                    h1
+                    p
+                        strong
+                    div
+
+
+-->
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JS</p>
+    <div class="msg">Clique em mim</div>
+    <script>
+        /* GET ELEMENTS BY TAGNAME
+        getElementsByTagName
+        */
+        
+        /*
+        var fundo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[2] //pega o primeiro parágrafo. Quando é plural, precisa usar os conchetes [] para definir qual elemento irá puxar.
+        window.document.write(p1.innerText) //escreve na tela o conteúd do parágro[0]
+        p1.style.color = 'blue'
+        fundo.style.background = 'black'
+        window.document.write(p1.innerHTML) // escreve o conteúdo de p1 com formatação
+        window.alert(p1.innerText) */
+
+        /* GET ELEMENTS BY ID
+        getElementsById
+       
+        var d = window.document.getElementById('msg') // não precisa de [] pois é singular
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando...'
+        */
+
+        var d = window.document.querySelector('div.msg')
+        d.style.color = '#f7c4c7'
+    </script>
+  
+</body>
+</html>

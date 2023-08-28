@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetições</title>
+    <style>
+        body {
+            padding: 20px;
+            background-color: rgb(92, 94, 156);
+            color: rgb(165, 189, 255);
+            font: normal 1.5em Arial;
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>Repetições (laços)</h1>
+    <h2>Sequência</h2>
+    <code><pre>
+        function comerPizza() {
+        while (temFatia()) {
+            comerFatia()
+            }
+        }
+    </pre></code>
+    <h3>Estrutura de repetição com teste lógico no início</h3>
+    <code><pre>
+        var c = 1
+        while (c <= 10) {
+            console.log(`Passo ${c}`)
+            c++ // var c recebe + 1
+        }
+    </pre></code>
+    <h3>Estrutura de repetição com teste lógico no final</h3>
+    <code><pre>
+        var c = 1
+        do {
+            console.log(`Passo ${c}`)
+            c++ // var c recebe + 1
+        } while (c <= 20)
+    </pre></code>
+    <h3>Estrutura de repetição com variável de controle</h3>
+    <code>
+        <pre>
+            for (inicio ; teste; incremento) {
+
+            }
+
+            ou seja
+
+            for (c = 1 ; c <= 10 ; c++) {
+                console.log(`Passo ${c}`)
+            }
+        </pre>
+    </code>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis</title>
+    <style>
+        body {
+            padding: 20px;
+            background-color: rgb(92, 94, 156);
+            color: rgb(165, 189, 255);
+            font: normal 25pt Arial;
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando números</h1>
+    <p>A função <code>prompt</code> considera o input como padrão, uma string</p>
+    <h2>Convertendo strings em números</h2>
+    <p><code>Number.parseInt(n)</code> > define como Inteiro</p> <!--parse é transformar-->
+    <p><code>Number.parseFloat(n)</code> > define como Flutuante</p>
+    <p><code>Number(n)</code> O próprio JS define</p>
+    <h2>Convertendo números em <code>strings</code></h2>
+    <p><code>String(n)</code> > define <code>n</code> como texto</p>
+    <p><code>n.toString()</code> > define <code>n</code> como texto</p>
+    <h2>Template Strings (interpolação)</h2>
+    <p>Utilize crases (``) em torno do conteudo e ${variavel}</p>
+    <p><code>s.lenght</code>// conta quantos caracteres tem na string <code>s</code></p>
+    <p><code>s.toUpperCase()</code>// tudo para MAIÚSCULA</p>
+    <p><code>s.toLowerCase()</code>// tudo para minúscula</p>
+
+
+    <script> // + serve para concatenar e somar
+        var n1 = Number(window.prompt('Digite um número: ')) //
+        var n2 = Number(window.prompt('Digite outro número: '))
+        var s = n1 + n2
+        window.alert(`A soma de ${n1} e ${n2} é ${s}`)
+    </script>
+</body>
+</html>

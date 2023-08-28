@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostas</title>
+    <style>
+        /*
+        Sistema de apostas
+        dois times jogão, escolhe quem vai ganhar.
+        se seu time ganhar, vc ganha R$ 100. Se empatar, não ganha nada e se perder perde R$ 50,00
+        */
+
+        body {
+            background-color: black;
+            color:rgb(255, 255, 255);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        img {
+            width: 80px;
+        }
+        .time1 {
+            width: 300px;
+            display: inline-block;
+
+        }
+        .time2 {
+            width: 300px;
+            display: inline-block;
+
+        }
+        .placar1, .placar2 {
+            font-size: 4em;
+        }
+        h1 {
+            color: aliceblue;
+        }
+        #txtsaldo {
+            width: 200px;
+            margin: auto;
+            background-color: rgb(235, 235, 235);
+            padding: 5px 15px;
+            border: 1px solid grey;
+            color:green;
+            text-align: right;
+            font-size: 2em;
+        }
+        button {
+            display: block;
+            margin: 30px auto;
+            width: 150px;
+            padding: 10px;
+            font-size: 2em;
+            background-color: chocolate;
+
+        }
+        #btn2 {
+            width: 150px;
+            background-color: rgb(226, 226, 226);
+            font-size: 1em;
+
+        }
+        #btn3 {
+            width: 150px;
+            background-color: rgb(70, 80, 223);
+            font-size: 1em;
+            color:rgb(235, 235, 235);
+        }
+        #time1, #time2 { /* altera o tamanho do radio*/
+            transform: scale(2);
+            margin-right: 10px;
+        }
+        label {
+            font-size: 1.5em;
+        }
+        #res  {
+            padding: 10px;
+            margin: 30px 0px 0px 0px;
+        }
+        #status {
+            padding: 10px;
+            margin: 0px 0px 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JOGO DE APOSTAS</h1>
+    </header>
+    <nav>
+        <p id="saldo">SALDO</p>
+        <p id="txtsaldo">0</p></nav>
+    <div class="selecao">
+        <button onclick="selecionarTimes()" id="btn2">Selecionar Times</button>
+    </div>
+    <div>
+        <h1 id="res"></h1>
+        <h2 id="status"></h2>
+    </div>
+    <div class="time1">
+        <img src="#" id="escudo1">
+        <h2 id="ntime1">Time 1</h2>
+        <h1 class="placar1"></h1>
+        <input type="radio" name="time" id="time1">
+        <label for="time1">Selecionar</label>
+    </div>
+    <div class="time2">
+        <img src="#" id="escudo2">
+        <h2 id="ntime2">Time 2</h2>
+        <h1 class="placar2"></h1>
+        <input type="radio" name="time" id="time2">
+        <label for="time2">Selecionar</label>
+    </div>
+    <button onclick="verificar()">Apostar</button>
+    <button onclick="reset()" id="btn3">Resetar</button>
+    
+    <script>
+        var saldo = 0
+
+        
+        // CHAMANDO FUNÇÃO QUE GERA NÚMERO ALEATÓRIO
+        function gerarNumeroAleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        //definindo o time
+        function selecionarTimes() {
+            var placar1 = window.document.querySelector('h1.placar1')
+            var placar2 = window.document.querySelector('h1.placar2')
+            placar1.innerText = ''
+            placar2.innerText = ''
+            var selectime2 = Number(gerarNumeroAleatorio(0, 4))
+            var ntime2 = window.document.querySelector('h2#ntime2')
+            var selectime1 = Number(gerarNumeroAleatorio(0, 4))
+            var ntime1 = window.document.querySelector('h2#ntime1')
+            var escudo1 = window.document.querySelector('img#escudo1')
+            var escudo2 = window.document.querySelector('img#escudo2')
+            switch (selectime1) {
+                case 0:
+                    ntime1.innerText = 'Avaí'
+                    escudo1.src = 'https://logodownload.org/wp-content/uploads/2017/02/avai-fc-logo-escudo-8.png'
+                    break
+                case 1:
+                    ntime1.innerText = 'Figueirense'
+                    escudo1.src = 'https://logodownload.org/wp-content/uploads/2017/02/figueirense-fc-logo-escudo.png'
+                    break
+                case 2:
+                    ntime1.innerText = 'Corinthians'
+                    escudo1.src = 'https://logodownload.org/wp-content/uploads/2016/11/corinthians-logo-01.png'
+                    break
+                case 3:
+                    ntime1.innerText = 'Palmeiras'
+                    escudo1.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/2048px-Palmeiras_logo.svg.png'
+                    break
+            }
+            
+            switch (selectime2) {
+                case 0:
+                    ntime2.innerText = 'Palmeiras'
+                    escudo2.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/2048px-Palmeiras_logo.svg.png'
+                    break
+                case 1:
+                    ntime2.innerText = 'Corinthians'
+                    escudo2.src = 'https://logodownload.org/wp-content/uploads/2016/11/corinthians-logo-01.png'
+                    break
+                case 2:
+                    ntime2.innerText = 'Figueirense'
+                    escudo2.src = 'https://logodownload.org/wp-content/uploads/2017/02/figueirense-fc-logo-escudo.png'
+                    break
+                case 3:
+                    ntime2.innerText = 'Avaí'
+                    escudo2.src = 'https://logodownload.org/wp-content/uploads/2017/02/avai-fc-logo-escudo-8.png'
+                    break
+            }
+        }
+        // FUNÇÃO DO BOTÃO VERIFICAR
+        function verificar() {
+            var txtsaldo = document.querySelector('p#txtsaldo')    
+            var timeselecionado = document.getElementsByName('time') // puxa o radio do time escolhido
+            var num1 = Number(gerarNumeroAleatorio(0, 4)) //Gera um nº entre 0 e 4
+            var num2 = Number(gerarNumeroAleatorio(0, 4))
+            var placar1 = window.document.querySelector('h1.placar1')
+            var placar2 = window.document.querySelector('h1.placar2')
+            placar1.innerText = num1
+            placar2.innerText = num2
+            var res = window.document.querySelector('h1#res')
+            var status = window.document.querySelector('h2#status')
+
+
+            // Verifica se o time1 foi selecionado VENCEU
+            if (num1 > num2 && timeselecionado[0].checked) {
+                saldo += 100
+                txtsaldo.innerText = `R$ ${saldo.toFixed(2)}`
+                res.innerText= `Venceu!`
+                res.style.background = 'green'
+                status.innerText = `Ganhou R$ 100,00`
+                status.style.background = 'rgb(0, 71, 12)'
+                
+            }
+            // Verifica se o time2 foi selecionado VENCEU
+            else if (num2 > num1 && timeselecionado[1].checked) {
+                saldo += 100
+                txtsaldo.innerText = `R$ ${saldo.toFixed(2)}`
+                res.innerText= `Venceu!`
+                res.style.background = 'green'
+                status.innerText = `Ganhou R$ 100,00`
+                status.style.background = 'rgb(0, 71, 12)'
+            }
+            
+
+            // Verifica se o time1 foi selecionado PERDEU
+            else if (num1 < num2 && timeselecionado[0].checked) {
+                saldo -= 100
+                txtsaldo.innerText = `R$ ${saldo.toFixed(2)}`
+                res.innerText= `Perdeu!`
+                res.style.background = 'red'
+                status.innerText = `Perdeu R$ 100,00`
+                status.style.background = 'rgb(119, 0, 0)'
+                
+            }
+            // Verifica se o time2 foi selecionado PERDEU
+            else if (num2 < num1 && timeselecionado[1].checked) {
+                saldo -= 100
+                txtsaldo.innerText = `R$ ${saldo.toFixed(2)}`
+                res.innerText= `Perdeu!`
+                res.style.background = 'red'
+                status.innerText = `Perdeu R$ 100,00`
+                status.style.background = 'rgb(119, 0, 0)'
+            }
+            else if (num2 == num1) {
+                saldo += 50
+                txtsaldo.innerText = `R$ ${saldo.toFixed(2)}`
+                res.innerText= `Empate`
+                res.style.background = 'blue'
+                status.innerText = `Ganhou R$ 50,00`
+                status.style.background = 'rgb(0, 71, 12)'
+            }
+
+            // formatação saldo
+            if (saldo < 0) {
+                txtsaldo.style.color = 'red'
+            }
+
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador relacional</title>
+    <style>
+        body {
+            padding: 20px;
+            background-color: rgb(92, 94, 156);
+            color: rgb(165, 189, 255);
+            font: normal 25pt Arial;
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>Operadores Relacionais</h1>
+    <p>5 > 2 == true</p>    
+    <p>7 < 4 == false</p>
+    <p>8 >= 8 == true</p>
+    <p>9 <= 7 == false</p>
+    <p>5 == 5 == true</p>
+    <p>4 != 4 == false</p>
+    <p>5 == '5' == true | o JS não considera o tipo</p>
+    <h2>Identidade</h2>
+    <h3>IGUALDADE RESTRITA</h3>
+    <p>5 === '5' == false | para considerar o tipo de dado em uma relação, utilize '==='</p>
+    <p>5 === 5 == true</p>
+    <p>5 !== 2 == false | para considerar o tipo numa relação de diferenla usar !==</p>    
+    <h1>Operadores Lógicos</h1>
+    <p>! == negação (not)</p>
+    <p>&& == conjunção (and)</p>
+    <p>|| == disjunção (or)</p>
+    <h2>Ordem de execução</h2>
+    <p>1º !(negação)</p>
+    <p>2º &&(conjunção)</p>
+    <p>3º ||(disjunção)</p>
+
+    <h1>Precedência geral</h1>
+    <p>1º Operadores aritiméticos ((), **, /...)</p>
+    <p>2º Operadores relacionais (>, <, >=...)</p>
+    <p>3º Operadores lógicos (!, &&, ||)</p>
+
+    <h1>Operador ternário (três operandos)</h1>
+    <p>teste lógico ? true : false</p>
+    <p>média >= 7.0 ? "Aprovado" : "Reprovado"</p>
+    <p>O teste lógico é o IF do Python.</p>
+
+</body>
+</html>
