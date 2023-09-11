@@ -16,32 +16,41 @@ function clicar() {
    
 
     // validação de input
-    if (passo > fim || inicio == '' || fim == '' || fim < inicio) {
+    if (inicio == '' || fim == '') {
         resultado.innerHTML = '' 
-        res.innerText = `Impossível calcular!`
+        window.alert('[ERRO] Faltam dados!')
 
     }
     else {
-        if (passo == 0) {
+        if (passo == 0 || passo == '') {
             resultado.innerHTML = '' 
             window.alert('Passo não pode ser = 0. Passo recebeu 1')
             passo = 1
                         
         }
-        
-    }
-    if (inicio != '' || fim != '' || passo != ''){
+        if (inicio != '' || fim != '' || passo != ''){
             res.innerText = `Calculando`
             resultado.innerHTML = ''    
         // laços de repetição
             i = Number(inicio)
             f = Number(fim)
             p = Number(passo)
-            for (c = i ; c < f ; c += p) {
-                resultado.innerHTML += `${c} 👉 `
+            c = i
+            if (c < f){ 
+                for (c = i ; c <= f ; c += p) {
+                    resultado.innerHTML += `${c} 👉 `
+                }
+            }
+            else if (c > f) {
+                for (c = i; c >= f; c -= p) {
+                    resultado.innerHTML += `${c} 👉 `
+                }                
             }
             resultado.innerHTML += '🏁'
     }
+        
+    }
+    
 
     
 }
