@@ -1,17 +1,19 @@
 function multiplicar(){
-    var n = window.document.querySelector('input#num').value
-    var c = 1
-    var p1 = window.document.querySelector('p#res')
+    var n = window.document.querySelector('input#num').value    
+    var tab = document.querySelector('select#tab')
+    tab.innerHTML = ''
 
     if (n == ''){
         window.alert('Por favor digite algum número!')
     }
     else {
+    var c = 1
     while (c <= 10){
-        p1.innerText += `${n} x ${c} = ${n*c}\n`
-        c += 1
-        }
+        let item = document.createElement('option')
+        item.text = `${n} x ${c} = ${n*c}`
+        item.value = `tab$${c}`
+        tab.appendChild(item)
+        c++
+    }
     }
 }
-
-/* os resultados estão se acumulando, preciso zerar o html toda vez que clico no botão */
