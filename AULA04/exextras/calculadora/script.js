@@ -1,5 +1,6 @@
 var resultado = document.querySelector('h1#res')
 var n1 = ''
+let n2 = ''
 
 function num1() {
     n1 += '1'
