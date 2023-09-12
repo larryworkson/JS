@@ -1,0 +1,38 @@
+section {
+    width: 50%;
+    margin: 0px auto;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #eeeeee;
+    box-shadow: 5px 5px 20px #000000;
+    font-size: 2em;
+
+}
+#res {
+    background-color: rgb(215, 250, 223);
+}
+p {
+    padding: 30px;
+    border: 1px solid #757575;
+   
+}
+p:hover {
+    background-color: blanchedalmond;
+}
+button {
+    background-color: cadetblue;
+    width: 100px;
+    padding: 30px;
+    color: #ffffff;
+    font-size: 1.5em;
+}
+button:hover {
+    background-color: rgb(63, 113, 115);
+}
+button#calc {
+    background-color: rgb(135, 230, 137);
+    width: 100px;
+    padding: 30px;
+    color: #092b09;
+    font-size: 1.5em;
+    font-weight: bold;
+} 
