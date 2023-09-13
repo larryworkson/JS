@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = [5, 8, 4]
+        num[3] = 6 /* adicionar o 6 na lista na posição 3 */
+        num.push(7) /* adiciona o valor 7 na última posição da lista */
+        num.length /* propriedade verifica quantos elementos no array  */
+        num.sort() /* função que deixar o vetor em ordem crescente */
+        for (let pos = 0 ; pos <= num.length; pos++) {
+            console.log(`${num[pos]}`)
+        }
+        /* versão mais imples */
+        for (let pos in num) { /* laço para cada elemento do array */
+            console.log(num[pos])
+        }
+
+        /* buscando valores na lista */
+        num.indexOf(7) /* busca o valor 7 dentro do array e traz o índice dele. Se não encontrar o valor, retorna -1*/
+
+        num.pop() /* remove o último item da lista */
+        num.shift() /* remove o primeiro item da lista */
+        num.splice(2, 1) /* remove e altera valores da lista. ESTUDAR MELHOR */
+    </script>
+</body>
+</html>
