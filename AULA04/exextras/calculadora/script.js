@@ -43,6 +43,7 @@ function calcular(){
 
 function zerar() {
     display.innerText = '0'
+    troca_num = true
     op = ''
     n1 = []
     n2 = []
