@@ -4,19 +4,19 @@
 }
 
 section {
-    width: 50%;
+    width: 80%;
     margin: 0px auto;
     font-family: 'Courier New', Courier, monospace;
     background-color: #323232;
     box-shadow: 2px 2px 40px #005c80;
-    font-size: 2em;
+    font-size: 8vw;
 
 }
 th#res {
     background-color: rgb(46, 70, 52);
 }
 table {
-    width: 100%;
+    width: 99%;
 }
 th {
     width: 33%;
@@ -41,5 +41,4 @@ th#calc:hover {
 
 .operadores {
     background-color: rgb(36, 36, 36);
-    padding: 2%;
 }

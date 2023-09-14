@@ -1,16 +1,15 @@
 var resultado = document.querySelector('th#res')
-var calc = document.querySelector('button#calc')
 var n1 = []
 let n2 = []
-var op = ''
-var lado = new Boolean (true)
+var op = '' /* operador aritmetico */
+var troca_num = new Boolean (true) /* muda a lista para qual o número será adicionado. Este boolean define se é o primeiro ou segundo valor que o usuário inseriu. Se for o primeiro, ele vai para n1 se for o segundo vai para n2 */
 
 
 resultado.innerText = ''
-/* criei um boolean para saber se é o primeiro ou segundo valor que o usuário entrou. Se for o primeiro, ele vai para n1 se for o segundo vai para n2 */
+
 
 function addnum(num){
-    if (lado == true) {
+    if (troca_num == true) {
         n1.push(num)
     }
     else {
@@ -20,7 +19,7 @@ function addnum(num){
 }
 
 function somar(){
-    lado = false
+    troca_num = false
     op = '+'
     resultado.innerText = `${n1.join('')}${op}${n2.join('')}`
 
@@ -36,7 +35,7 @@ function calcular(){
         resultado.innerText = s
         n1 = []
         n2 = []
-        lado = true
+        troca_num = true
     }
 }
 
