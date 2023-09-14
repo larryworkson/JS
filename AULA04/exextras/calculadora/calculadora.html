@@ -8,20 +8,40 @@
 </head>
 <body>
     <section>
-        <h1 id="res">0</h1>
-        <p onclick="num1()">1</p>
-        <p onclick="num2()">2</p>
-        <p onclick="num3()">3</p>
-        <button onclick="somar()">+</button>
-        <button onclick="zerar()">CE</button>
-        <button onclick="calcular()" id="calc">=</button>
-        <h1 id="v1"></h1>
-        <h1 id="v2"></h1>
-        <h1 id="r"></h1>
+        <table> 
+            <tr>
+                <th></th>
+                <th></th>
+                <th id="res"></th>
+            </tr>           
+            <tr>
+                <th class="operadores" onclick="somar()">+</th>
+                <th class="operadores" onclick="zerar()">CE</th>
+            </tr>            
+            <tr>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+            </tr>
+            <tr>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+            </tr>
+            <tr class="nums">
+                <th onclick="num1()">1</th>
+                <th onclick="num2()">2</th>
+                <th onclick="num3()">3</th>
+            </tr>
+            <tr>
+                <th onclick="num0()">0</th>
+                <th onclick="calcular()" id="calc">=</th>
+            </tr>
+        </table>
     </section>
     <script src="script.js"></script>
 </body>
 </html>
 
-<!-- depois do primeiro cálculo, os valores estão concatenando. -->
-<!-- precisa alterar o layout da calculadora para uma tabela -->
+<!-- falta fazer funcionar os demais números -->
+<!-- tentar criar uma função que consiga pegar todos os números para não ter várias funções iguais -->
