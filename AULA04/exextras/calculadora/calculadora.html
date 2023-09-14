@@ -19,22 +19,22 @@
                 <th class="operadores" onclick="zerar()">CE</th>
             </tr>            
             <tr>
-                <th>7</th>
-                <th>8</th>
-                <th>9</th>
+                <th onclick="addnum(7)">7</th>
+                <th onclick="addnum(8)">8</th>
+                <th onclick="addnum(9)">9</th>
             </tr>
             <tr>
-                <th>4</th>
-                <th>5</th>
-                <th>6</th>
+                <th onclick="addnum(4)">4</th>
+                <th onclick="addnum(5)">5</th>
+                <th onclick="addnum(6)">6</th>
             </tr>
             <tr class="nums">
-                <th onclick="num1()">1</th>
-                <th onclick="num2()">2</th>
-                <th onclick="num3()">3</th>
+                <th onclick="addnum(1)">1</th>
+                <th onclick="addnum(2)">2</th>
+                <th onclick="addnum(3)">3</th>
             </tr>
             <tr>
-                <th onclick="num0()">0</th>
+                <th onclick="addnum(0)">0</th>
                 <th onclick="calcular()" id="calc">=</th>
             </tr>
         </table>
@@ -43,5 +43,6 @@
 </body>
 </html>
 
-<!-- falta fazer funcionar os demais números -->
-<!-- tentar criar uma função que consiga pegar todos os números para não ter várias funções iguais -->
+<!-- criar histórico para usar números já calculados -->
+<!-- criar opção de números decimais -->
+
