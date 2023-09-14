@@ -8,7 +8,6 @@ var troca_num = new Boolean (true) /* muda a lista para qual o número será adi
 
 display.innerText = '0'
 
-
 function addnum(num){
     if (troca_num == true) {
         n1.push(num)
@@ -19,10 +18,15 @@ function addnum(num){
     display.innerText = `${n1.join('')}${op}${n2.join('')}`
 }
 
-function somar(){
+function operar(operador){
+    if (n1.length == 0) {
+        window.alert('Insira pelo menos um número.')
+    }
+    else {
     troca_num = false
-    op = '+'
+    op = operador
     display.innerText = `${n1.join('')}${op}${n2.join('')}`
+    }
 
 }
 
