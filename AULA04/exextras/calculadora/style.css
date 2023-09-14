@@ -1,5 +1,5 @@
 * {
-    background-color: #000000;
+    background-color: #010114;
     color: #8d8d8d;
 }
 
@@ -8,20 +8,21 @@ section {
     margin: 0px auto;
     font-family: 'Courier New', Courier, monospace;
     background-color: #323232;
-    box-shadow: 2px 2px 40px #005c80;
     font-size: 8vw;
 
 }
 th#res {
-    background-color: rgb(46, 70, 52);
+    background-color: rgb(39, 39, 39);
 }
 table {
     width: 99%;
+    
 }
 th {
     width: 33%;
     padding: 7%;
     transition-duration: 0.3s;
+    background-color: #000000;
 }
 
 th:hover {
@@ -29,16 +30,18 @@ th:hover {
     transition-duration: 0.3s;
 }
 
+
 th#calc {
-    background-color: rgb(0, 99, 142);
+    background-color: rgb(0, 19, 142);
     width: 100px;
     font-size: 1.5em;
     font-weight: bold;
 } 
 th#calc:hover {
-    background-color:rgb(4, 43, 59);
+    background-color:rgb(0, 62, 142);
 }
 
 .operadores {
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(20, 20, 20);
+    color: rgb(0, 19, 142);
 }

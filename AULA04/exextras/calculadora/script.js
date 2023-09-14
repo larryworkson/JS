@@ -6,7 +6,7 @@ var op = '' /* operador aritmetico */
 var troca_num = new Boolean (true) /* muda a lista para qual o número será adicionado. Este boolean define se é o primeiro ou segundo valor que o usuário inseriu. Se for o primeiro, ele vai para n1 se for o segundo vai para n2 */
 
 
-display.innerText = ''
+display.innerText = '0'
 
 
 function addnum(num){
@@ -47,4 +47,20 @@ function zerar() {
     op = ''
     n1 = []
     n2 = []
+}
+
+function deletar() {
+    if (troca_num == true) {
+        n1.pop()
+    }
+    else {
+        if (n2.length > 0) {
+        n2.pop() 
+        }
+        else {
+            op = ''
+            troca_num = true
+        }
+    }
+    display.innerText = `${n1.join('')}${op}${n2.join('')}`
 }
