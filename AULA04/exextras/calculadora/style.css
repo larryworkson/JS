@@ -29,6 +29,9 @@ th:hover {
     background-color: rgb(49, 49, 49);
     transition-duration: 0.3s;
 }
+th::before {
+    background-color: aqua;
+}
 
 
 th#calc {
