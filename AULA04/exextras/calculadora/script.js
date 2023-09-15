@@ -37,8 +37,8 @@ function calcular(){
         var s = Number(v1) + Number(v2)
         display.innerText = ''
         op = ''
-        hist.push(s) /* adiciona o resultado da soma (s) no histórico */
-        display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico */
+        hist.push(s.toFixed(2)) /* adiciona o resultado da soma (s) no histórico */
+        display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico arredondado*/
         n1 = [] /* limpa a lista */
         n2 = []
         n1.push(s) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
