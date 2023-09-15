@@ -1,11 +1,13 @@
 * {
     background-color: #010114;
     color: #8d8d8d;
+    padding: 0px;
+    margin: 0px;
 }
 
 section {
     width: 80%;
-    margin: 0px auto;
+    margin: 30px auto;
     font-family: 'Courier New', Courier, monospace;
     background-color: #323232;
     font-size: 8vw;
@@ -15,11 +17,12 @@ th#res {
     background-color: rgb(39, 39, 39);
 }
 table {
-    width: 99%;
+    width: 100%;
+    margin: 0px auto;
     
 }
 th {
-    width: 33%;
+    width: 37%;
     padding: 7%;
     transition-duration: 0.3s;
     background-color: #000000;
