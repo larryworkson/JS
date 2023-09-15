@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+</head>
+<body>
+    <h1>Funções (rotinas)</h1>
+    <p>São <strong>ações</strong> executadas assim que são <strong>chamadas</strong> ou em decorrência de algum <strong>evento</strong>.</p>
+    <p>Uma função pode receber <strong>parâmetros</strong> e retornar um <strong>resultado</strong>.</p>
+    <h2>Chamada</h2>
+    <h2>Parâmetros (entrada)</h2>
+    <h2>Ação</h2>
+    <h2>Retorno</h2>
+    <script>
+/*         function parimp(n) {
+            if (n % 2 == 0) {
+                return 'par'
+            }
+            else {
+                return 'impar'
+            }
+        }
+        let resposta = parimp(11)
+        window.alert(resposta) */
+       /*  function soma(n1=0, n2=0) {  //caso n1 ou n2 não for definido, será considerado 0 
+            return n1 + n2
+        }
+        window.alert(soma(5, 2)) */
+        function fatorial(n) {
+            let fat = 1
+            for (let c = n ; c > 1; c--) {
+                fat *= c
+            }
+            return fat
+        }
+        window.alert(fatorial(5))
+    </script>
+</body>
+</html>

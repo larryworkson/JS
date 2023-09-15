@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABUADA</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+
+        }
+        body {
+            background-color: #3d0046;
+            font: normal 1em 'Arial';
+            color: rgb(197, 197, 197);
+            line-height: 2.5em;
+        }
+        
+        .fundo {
+            width: 80%;
+            background-color: rgb(252, 240, 255);
+            border-radius: 15px;
+            margin: 10px auto;
+            padding: 25px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.195);
+        }
+        #analise, label {
+            color:black;
+        }
+        #analise {
+            color: black;
+
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        h3 {
+            text-align: center;
+            color: black;
+        }
+
+        .fundo p {
+            display: inline;
+            color: black;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 60%;
+        }
+        
+        footer {
+            text-align: center;
+            color: rgb(12, 62, 38);
+            font-size: 1.2em;
+        }
+        button {
+            font: bold 1em 'Roboto';
+            display: inline-block;
+            padding: 2px 10px;
+            background-color: #17a040;
+            color:rgb(240, 255, 245);
+            border: 1px solid #0a6429;
+            border-radius: 5px;
+            transition-duration: 0.5s;
+
+        }
+        button:hover {
+            background-color: #066d0d;
+            border: 1px solid #072104;
+            transition-duration: 0.5s;
+        }
+ 
+    </style>
+
+</head>
+<body>
+    <h1>Analisador de Números</h1>
+    <div class="fundo">
+        <p>Número (entre 1 e 100)<input type="number" id="num"></p>
+        <button value="contar" onclick="adicionar()">Adicionar</button><br>
+        <select name="tab" id="tab" size="10">
+        </select>
+        <button onclick="finalizar()">Finalizar</button>
+        <div id="analise"></div>
+    <footer>
+        <p class="footer">&copy;Curso em Vídeo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
