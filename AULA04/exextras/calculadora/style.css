@@ -38,16 +38,16 @@ th::before {
 
 
 th#calc {
-    background-color: rgb(0, 19, 142);
+    background-color: rgb(20, 47, 221);
     width: 100px;
     font-size: 1.5em;
     font-weight: bold;
 } 
 th#calc:hover {
-    background-color:rgb(0, 62, 142);
+    background-color:rgb(67, 20, 221);
 }
 
 .operadores {
     background-color: rgb(20, 20, 20);
-    color: rgb(0, 19, 142);
+    color: rgb(20, 47, 221);
 }
