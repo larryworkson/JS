@@ -37,7 +37,13 @@ function calcular(){
         var s = Number(v1) + Number(v2)
         display.innerText = ''
         op = ''
-        hist.push(s.toFixed(2)) /* adiciona o resultado da soma (s) no histórico */
+        if (Number(s) === s && s % 1 !== 0){
+            hist.push(s.toFixed(2))
+        }
+        else {
+            hist.push(s)
+        }
+         /* adiciona o resultado da soma (s) no histórico */
         display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico arredondado*/
         n1 = [] /* limpa a lista */
         n2 = []
