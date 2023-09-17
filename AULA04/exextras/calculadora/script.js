@@ -76,6 +76,24 @@ function deletar() {
 }
 
 /* efeitos extras */
+/* background dinamico */
+var graus = 0;
+function atualizarBackground() {
+    document.body.style.backgroundImage = `linear-gradient(${graus}deg, rgb(26, 0, 160), #000000)`;
+    graus++;
+
+    if (graus <= 365) {
+        setTimeout(atualizarBackground, 10);
+    }
+    if (graus == 365){
+        graus = 0
+    }
+}
+
+atualizarBackground();
+
+
+/* outros efeitos */
 num7.addEventListener('click', clicar7)
 num7.addEventListener('mouseout', sair7)
 
