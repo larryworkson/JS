@@ -79,11 +79,11 @@ function deletar() {
 /* background dinamico */
 var graus = 0;
 function atualizarBackground() {
-    document.body.style.backgroundImage = `linear-gradient(${graus}deg, rgb(26, 0, 160), #000000)`;
+    document.body.style.backgroundImage = `linear-gradient(${graus}deg, rgb(0, 19, 142), 20%, #000000)`;
     graus++;
 
     if (graus <= 365) {
-        setTimeout(atualizarBackground, 10);
+        setTimeout(atualizarBackground, 50);
     }
     if (graus == 365){
         graus = 0

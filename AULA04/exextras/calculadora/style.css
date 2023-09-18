@@ -4,7 +4,10 @@
     margin: 0px;
 }
 body {
-    background-image: linear-gradient(0deg, rgb(26, 0, 37), blue)
+    height: 100vh;
+    background-image: linear-gradient(0deg, rgb(0, 19, 142), 20%, #000000);
+    background-size: cover;
+    
 }
 
 section {
@@ -24,8 +27,9 @@ table {
     
 }
 th {
-    width: 37%;
-    padding: 7%;
+    width: 33%;
+    margin: 0px auto;
+    padding: 5%;
     transition-duration: 0.3s;
     background-color: #000000;
 }
