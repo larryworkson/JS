@@ -94,20 +94,16 @@ atualizarBackground();
 
 
 /* outros efeitos */
-num7.addEventListener('click', clicar7)
-num7.addEventListener('mouseout', sair7)
+function clicou(numdigitado) {
+    numdigitado.addEventListener('click', clicar)
+    numdigitado.addEventListener('mouseout', sair)
+    function clicar() {
+        numdigitado.style.background = 'rgb(0, 19, 142)'
+    }
+    function sair() {
+        numdigitado.style.background = '#000000'
+    }
+}
 
-function clicar7() {
-    num7.style.background = 'rgb(0, 19, 142)'
-}
-function sair7() {
-    num7.style.background = '#000000'
-}
-num8.addEventListener('click', clicar8)
-num8.addEventListener('mouseout', sair8)
-function clicar8() {
-    num8.style.background = 'rgb(0, 19, 142)'
-}
-function sair8() {
-    num8.style.background = '#000000'
-}
+clicou(num7)
+clicou(num8)
