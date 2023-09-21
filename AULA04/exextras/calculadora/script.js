@@ -1,6 +1,4 @@
 var display = document.querySelector('th#res')
-var num7 = document.querySelector('th#num7')
-var num8 = document.querySelector('th#num8')
 var n1 = []
 let n2 = []
 var hist = [] /* histórico de calculos, para usar resultados em outras operações */
@@ -56,6 +54,9 @@ function calcular(){
         n1.push(s) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         troca_num = true /* volta a considerar a n1 para receber os dados */
     }
+    if (op == '-' || op == '÷' || op == '*') {
+        window.alert('Operação indisponível!')
+    }
 }
 
 function zerar() {
@@ -101,18 +102,3 @@ function atualizarBackground() {
 
 atualizarBackground();
 
-
-/* outros efeitos */
-function clicou(numdigitado) {
-    numdigitado.addEventListener('click', clicar)
-    numdigitado.addEventListener('mouseout', sair)
-    function clicar() {
-        numdigitado.style.background = 'rgb(0, 19, 142)'
-    }
-    function sair() {
-        numdigitado.style.background = '#000000'
-    }
-}
-
-clicou(num7)
-clicou(num8)

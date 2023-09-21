@@ -11,32 +11,35 @@
     <section>
         <table> 
             <tr>
-                <th colspan="3" id="res"></th>
+                <th colspan="4" id="res"></th>
             </tr>           
             <tr>
-                <th class="operadores" onclick="operar('+')">+</th>
-                <th class="operadores" onclick="deletar()">DEL</th>
                 <th class="operadores" onclick="zerar()">C</th>
+                <th colspan="2" class="operadores" onclick="deletar()">DEL</th>                
+                <th class="operadores" onclick="operar('-')">-</th>
             </tr>            
             <tr>
-                <th onclick="addnum(7)" id="num7">7</th>
-                <th onclick="addnum(8)" id="num8">8</th>
+                <th onclick="addnum(7)">7</th>
+                <th onclick="addnum(8)">8</th>
                 <th onclick="addnum(9)">9</th>
+                <th class="operadores" onclick="operar('+')">+</th>
             </tr>
             <tr>
                 <th onclick="addnum(4)">4</th>
                 <th onclick="addnum(5)">5</th>
                 <th onclick="addnum(6)">6</th>
+                <th class="operadores" onclick="operar('÷')">÷</th>
             </tr>
             <tr class="nums">
                 <th onclick="addnum(1)">1</th>
                 <th onclick="addnum(2)">2</th>
                 <th onclick="addnum(3)">3</th>
+                <th class="operadores" onclick="operar('*')">*</th>
             </tr>
             <tr>
                 <th onclick="addnum(0)">0</th>
                 <th onclick="addnum('.')">,</th>
-                <th onclick="calcular()" id="calc">=</th>
+                <th colspan="2" onclick="calcular()" id="calc">=</th>
             </tr>
         </table>
     </section>
