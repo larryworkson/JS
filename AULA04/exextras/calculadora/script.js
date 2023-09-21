@@ -73,8 +73,43 @@ function calcular(){
         n1.push(sub) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         troca_num = true /* volta a considerar a n1 para receber os dados */
     }
-    if (op == '÷' || op == '*') {
-        window.alert('Operação indisponível!')
+    if (op == '÷') {
+        let v1 = n1.join('')
+        let v2 = n2.join('')
+        var div = Number(v1) / Number(v2)
+        display.innerText = '' 
+        op = ''
+        if (Number(div) === div && div % 1 !== 0) { /* se o resultado for um Float, deve terá apenas 2 casas decimais */
+            hist.push(div.toFixed(2))
+        }
+        else {          /* adiciona o resultado da subtração (sub) no histórico */
+
+            hist.push(div)
+        }
+        display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico*/
+        n1 = [] /* limpa a lista */
+        n2 = []
+        n1.push(div) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
+        troca_num = true /* volta a considerar a n1 para receber os dados */
+    }
+    if (op == '*') {
+        let v1 = n1.join('')
+        let v2 = n2.join('')
+        var multi = Number(v1) * Number(v2)
+        display.innerText = '' 
+        op = ''
+        if (Number(multi) === multi && multi % 1 !== 0) { /* se o resultado for um Float, deve terá apenas 2 casas decimais */
+            hist.push(multi.toFixed(2))
+        }
+        else {          /* adiciona o resultado da subtração (sub) no histórico */
+
+            hist.push(multi)
+        }
+        display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico*/
+        n1 = [] /* limpa a lista */
+        n2 = []
+        n1.push(multi) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
+        troca_num = true /* volta a considerar a n1 para receber os dados */
     }
 }
 
