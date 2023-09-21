@@ -54,7 +54,26 @@ function calcular(){
         n1.push(s) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         troca_num = true /* volta a considerar a n1 para receber os dados */
     }
-    if (op == '-' || op == '÷' || op == '*') {
+    if (op == '-') {
+        let v1 = n1.join('')
+        let v2 = n2.join('')
+        var sub = Number(v1) - Number(v2)
+        display.innerText = '' 
+        op = ''
+        if (Number(sub) === sub && sub % 1 !== 0) { /* se o resultado for um Float, deve terá apenas 2 casas decimais */
+            hist.push(sub.toFixed(2))
+        }
+        else {          /* adiciona o resultado da subtração (sub) no histórico */
+
+            hist.push(sub)
+        }
+        display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico*/
+        n1 = [] /* limpa a lista */
+        n2 = []
+        n1.push(sub) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
+        troca_num = true /* volta a considerar a n1 para receber os dados */
+    }
+    if (op == '÷' || op == '*') {
         window.alert('Operação indisponível!')
     }
 }
