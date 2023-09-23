@@ -43,15 +43,18 @@ function calcular(){
         op = ''
         if (Number(s) === s && s % 1 !== 0){ /* se o resultado for um Float, deve terá apenas 2 casas decimais */
             hist.push(s.toFixed(2))
+            n1 = [] /* limpa a lista */
+            n2 = []
+            n1.push(s.toFixed(2)) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         }
         else {
             hist.push(s)
+            n1 = [] /* limpa a lista */
+            n2 = []
+            n1.push(2) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         }
          /* adiciona o resultado da soma (s) no histórico */
-        display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico*/
-        n1 = [] /* limpa a lista */
-        n2 = []
-        n1.push(s) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
+        display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico*/        
         troca_num = true /* volta a considerar a n1 para receber os dados */
     }
     if (op == '-') {
@@ -62,15 +65,18 @@ function calcular(){
         op = ''
         if (Number(sub) === sub && sub % 1 !== 0) { /* se o resultado for um Float, deve terá apenas 2 casas decimais */
             hist.push(sub.toFixed(2))
+            n1 = [] /* limpa a lista */
+            n2 = []
+            n1.push(sub.toFixed(2)) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         }
         else {          /* adiciona o resultado da subtração (sub) no histórico */
-
             hist.push(sub)
+            n1 = [] /* limpa a lista */
+            n2 = []
+            n1.push(sub) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         }
         display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico*/
-        n1 = [] /* limpa a lista */
-        n2 = []
-        n1.push(sub) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
+
         troca_num = true /* volta a considerar a n1 para receber os dados */
     }
     if (op == '÷') {
@@ -81,15 +87,18 @@ function calcular(){
         op = ''
         if (Number(div) === div && div % 1 !== 0) { /* se o resultado for um Float, deve terá apenas 2 casas decimais */
             hist.push(div.toFixed(2))
+            n1 = [] /* limpa a lista */
+            n2 = []
+            n1.push(div.toFixed(2)) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         }
         else {          /* adiciona o resultado da subtração (sub) no histórico */
-
             hist.push(div)
+            n1 = [] /* limpa a lista */
+            n2 = []
+            n1.push(div) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         }
         display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico*/
-        n1 = [] /* limpa a lista */
-        n2 = []
-        n1.push(div) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
+
         troca_num = true /* volta a considerar a n1 para receber os dados */
     }
     if (op == '*') {
@@ -100,15 +109,17 @@ function calcular(){
         op = ''
         if (Number(multi) === multi && multi % 1 !== 0) { /* se o resultado for um Float, deve terá apenas 2 casas decimais */
             hist.push(multi.toFixed(2))
+            n1 = [] /* limpa a lista */
+            n2 = []
+            n1.push(multi.toFixed(2)) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         }
         else {          /* adiciona o resultado da subtração (sub) no histórico */
-
             hist.push(multi)
+            n1 = [] /* limpa a lista */
+            n2 = []
+            n1.push(multi) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         }
         display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico*/
-        n1 = [] /* limpa a lista */
-        n2 = []
-        n1.push(multi) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         troca_num = true /* volta a considerar a n1 para receber os dados */
     }
 }
