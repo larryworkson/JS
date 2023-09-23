@@ -61,7 +61,7 @@ function calcular(){
             hist.push(s)
             n1 = [] /* limpa a lista */
             n2 = []
-            n1.push(2) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
+            n1.push(s) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         }
          /* adiciona o resultado da soma (s) no histórico */
         display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico*/        
