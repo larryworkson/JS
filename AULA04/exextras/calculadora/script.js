@@ -1,4 +1,6 @@
 var display = document.querySelector('th#res')
+var btnigual = document.querySelector('th#calc')
+var btnoperadores = document.getElementsByClassName('operadores')
 var n1 = []
 let n2 = []
 var hist = [] /* histórico de calculos, para usar resultados em outras operações */
@@ -6,6 +8,8 @@ var op = '' /* operador aritmetico */
 var troca_num = new Boolean (true) /* muda a lista para qual o número será adicionado. Este boolean define se é o primeiro ou segundo valor que o usuário inseriu. Se for o primeiro, ele vai para n1 se for o segundo vai para n2 */
 var igual = false /* torna-se true quando usuário clica em = */
 display.innerText = '0'
+
+
 
 function addnum(num){
     if (igual == true && op == '') { /* se usuário já clicou em = e não adicionou um operador (op), significa que ele não está deseja usar o histórico. Então a n1 é zerada, para zerar o display */
@@ -33,7 +37,12 @@ function operar(operador){
 
 }
 
-function calcular(){   
+function calcular(){
+    numsaleatorios = []
+    for (c = 0; c <= 2; c++) {
+        let numaleatorio = Math.floor(Math.random() * 255) + 1
+        numsaleatorios.push(numaleatorio)
+    }
     igual = true 
     if (op == '+') {
         let v1 = n1.join('')
@@ -76,7 +85,6 @@ function calcular(){
             n1.push(sub) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         }
         display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico*/
-
         troca_num = true /* volta a considerar a n1 para receber os dados */
     }
     if (op == '÷') {
@@ -98,8 +106,8 @@ function calcular(){
             n1.push(div) /* considera o resultado do último cálculo como primeiro valor de uma nova operação */
         }
         display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico*/
-
         troca_num = true /* volta a considerar a n1 para receber os dados */
+ 
     }
     if (op == '*') {
         let v1 = n1.join('')
@@ -121,6 +129,16 @@ function calcular(){
         }
         display.innerText = hist.slice(-1) /* apresenta o último item adicionado no histórico*/
         troca_num = true /* volta a considerar a n1 para receber os dados */
+        /* mudando a cor da calculadora */
+
+    }
+    /* mudando a cor da calculadora */
+    if (hist.slice(-1) == 7) {    
+        for (var i = 0; i < btnoperadores.length; i++) { /*   para aplicar o efeito a todos os elementos da class operadores, precisa fazer um laço. Funciona como uma lista.   */   
+            btnigual.style.background = `rgb(${numsaleatorios[0]}, ${numsaleatorios[1]}, ${numsaleatorios[2]})`
+            btnoperadores[i].style.color = `rgb(${numsaleatorios[0]}, ${numsaleatorios[1]}, ${numsaleatorios[2]})`
+
+        }
     }
 }
 
@@ -152,9 +170,10 @@ function deletar() {
 
 /* efeitos extras */
 /* background dinamico */
+
 var graus = 0;
 function atualizarBackground() {
-    document.body.style.backgroundImage = `linear-gradient(${graus}deg, rgb(0, 19, 142), 20%, #000000)`;
+    document.body.style.backgroundImage = `linear-gradient(${graus}deg, rgb(0, 10, 82), 10%, #000000)`;
     graus++;
 
     if (graus <= 365) {
@@ -164,6 +183,7 @@ function atualizarBackground() {
         graus = 0
     }
 }
-
 atualizarBackground();
+
+
 

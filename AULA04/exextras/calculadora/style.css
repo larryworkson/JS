@@ -7,13 +7,13 @@ body {
     height: 100vh;
     background-image: linear-gradient(0deg, rgb(0, 19, 142), 20%, #000000);
     background-size: cover;
+    font-family: 'Courier New', Courier, monospace;
     
 }
 
 section {
     width: 80%;
     margin: 30px auto;
-    font-family: 'Courier New', Courier, monospace;
     background-color: #323232;
     font-size: 8vw;
 
@@ -33,15 +33,17 @@ th {
     transition-duration: 0.3s;
     background-color: #000000;
 }
+p {
+    width: 60%;
+    margin: 10px auto;
+    font-size: 3vw;
+    text-align: center;
+}
 
 th:hover {
     background-color: rgb(49, 49, 49);
     transition-duration: 0.3s;
 }
-th::before {
-    background-color: aqua;
-}
-
 
 th#calc {
     background-color: rgb(20, 47, 221);
