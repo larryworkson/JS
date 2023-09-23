@@ -1,6 +1,7 @@
 var display = document.querySelector('th#res')
 var btnigual = document.querySelector('th#calc')
 var btnoperadores = document.getElementsByClassName('operadores')
+var fundotab = document.querySelector('section#tab')
 var n1 = []
 let n2 = []
 var hist = [] /* histórico de calculos, para usar resultados em outras operações */
@@ -137,6 +138,7 @@ function calcular(){
         for (var i = 0; i < btnoperadores.length; i++) { /*   para aplicar o efeito a todos os elementos da class operadores, precisa fazer um laço. Funciona como uma lista.   */   
             btnigual.style.background = `rgb(${numsaleatorios[0]}, ${numsaleatorios[1]}, ${numsaleatorios[2]})`
             btnoperadores[i].style.color = `rgb(${numsaleatorios[0]}, ${numsaleatorios[1]}, ${numsaleatorios[2]})`
+            fundotab.style.background = `rgb(${numsaleatorios[0]}, ${numsaleatorios[1]}, ${numsaleatorios[2]})`
 
         }
     }
