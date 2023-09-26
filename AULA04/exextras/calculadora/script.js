@@ -10,9 +10,17 @@ var troca_num = new Boolean (true) /* muda a lista para qual o número será adi
 var igual = false /* torna-se true quando usuário clica em = */
 display.innerText = '0'
 
-
+/* function mudarFontSize() { */ /* diminui o font-size quando o display está cheio */
+   /*  if (n1.length + n2.length < 12 || hist.slice(-1) < 12) {
+        display.style.fontSize = '8vw'
+    }
+    else {
+        display.style.fontSize = '5vw'
+    }
+} */
 
 function addnum(num){
+   /*  mudarFontSize()  */
     if (igual == true && op == '') { /* se usuário já clicou em = e não adicionou um operador (op), significa que ele não está deseja usar o histórico. Então a n1 é zerada, para zerar o display */
         n1 = []
         igual = false /* ao zerar a n1, a var igual tbm volta ao estado original (false) */
@@ -27,6 +35,7 @@ function addnum(num){
 }
 
 function operar(operador){
+    //mudarFontSize()
     if (n1.length == 0) {
         window.alert('Insira pelo menos um número.')
     }
@@ -39,6 +48,7 @@ function operar(operador){
 }
 
 function calcular(){
+    //mudarFontSize()
     numsaleatorios = []
     for (c = 0; c <= 2; c++) {
         let numaleatorio = Math.floor(Math.random() * 255) + 1
@@ -170,9 +180,12 @@ function deletar() {
     display.innerText = `${n1.join('')}${op}${n2.join('')}`
 }
 
-/* efeitos extras */
-/* background dinamico */
 
+
+/* efeitos extras */
+
+
+/* background dinamico */
 var graus = 0;
 function atualizarBackground() {
     document.body.style.backgroundImage = `linear-gradient(${graus}deg, rgb(0, 10, 82), 10%, #000000)`;
