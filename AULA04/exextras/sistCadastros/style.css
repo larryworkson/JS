@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(168, 168, 168);
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+input, button {
+    display: block;
+    margin: 10px;
+}
+thead {
+    background-color: rgb(46, 22, 69);
+}
+th, td {
+    padding: 5px;
+    border: 1px solid blueviolet;
+}
