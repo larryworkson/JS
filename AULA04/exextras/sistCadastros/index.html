@@ -13,9 +13,9 @@
             <input type="email" id="email" placeholder="E-mail">
             <input type="number" id="tel" placeholder="Telefone">
             <input type="text" id="cidade" placeholder="Cidade">
-            <button type="button" onclick="cadastrar()">Cadastrar</button>
-            <div id="res"></div>
-            <table >
+            <button type="button" onclick="cadastrar()">CADASTRAR</button>
+            
+            <table id="tabela">
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -29,7 +29,7 @@
                 <tfoot>
                     <tr>
                         <th>Total de cadastros</th>
-                        <td>0</td>
+                        <td colspan="3" id="tot"></td>
                     </tr>
                 </tfoot>
             </table>
