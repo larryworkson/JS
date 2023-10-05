@@ -25,15 +25,29 @@ button {
     background-color: goldenrod;
     color: black;
     font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    transition-duration: 0.2s;
+}
+button:hover {
+    background-color: rgb(217, 127, 0);
+    transition-duration: 0.2s;
+}
+button.del {
+    background-color: rgb(213, 54, 54);
+    color: #ffffff;
+    border-radius: 50px;
+    border: none;
 }
 table {
-    display: none;
+   display: none;
   
 }
 thead {
     background-color: rgb(46, 22, 69);
 }
 th, td {
+    width: 100%;
     padding: 5px;
     border: 1px solid rgb(110, 82, 10);
 }
