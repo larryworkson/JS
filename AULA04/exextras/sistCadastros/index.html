@@ -18,10 +18,12 @@
             <table id="tabela">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Nome</th>
                         <th>Email</th>
                         <th>Telefone</th>
                         <th>Cidade</th>
+                        <th>Opções</th>
                     </tr>
                 </thead>
                 <tbody id="tab">
@@ -29,7 +31,7 @@
                 <tfoot>
                     <tr>
                         <th>Total de cadastros</th>
-                        <td colspan="3" id="tot"></td>
+                        <td colspan="5" id="tot"></td>
                     </tr>
                 </tfoot>
             </table>
@@ -39,4 +41,6 @@
 </body>
 </html>
 
-<!-- colocar opção para excluir e editar item. -->
+<!-- colocar opção para editar item:
+Para fazer isso precisa add uma coluna de ID que será o index do item.
+Depois usar o botão excluir para navegar entre os itens da lista, exluir e apresentar novamente a lista. -->

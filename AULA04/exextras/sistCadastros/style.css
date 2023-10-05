@@ -28,6 +28,7 @@ button {
 }
 table {
     display: none;
+  
 }
 thead {
     background-color: rgb(46, 22, 69);
@@ -35,6 +36,9 @@ thead {
 th, td {
     padding: 5px;
     border: 1px solid rgb(110, 82, 10);
+}
+#tot {
+    text-align: right;
 }
 @media (max-width: 600px){
     section {
