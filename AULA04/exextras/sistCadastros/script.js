@@ -39,3 +39,5 @@ button>`
     }
     
 }
+
+/* testar mudar as variáveis para LET para ver se o erro é extinguido */
