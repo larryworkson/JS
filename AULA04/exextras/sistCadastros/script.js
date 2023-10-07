@@ -1,6 +1,7 @@
 "use strict"
 var base = []
 
+
 function del(id) {
     base.splice(id, 1)
     atualizarTab()
@@ -8,12 +9,12 @@ function del(id) {
 
 
 function cadastrar() {
-    var cadastros = {}
-    var tabela = document.querySelector('table#tabela')
-    var nomePessoa = document.querySelector('input#nome').value
-    var email = document.querySelector('input#email').value
-    var tel = document.querySelector('input#tel').value
-    var cidade = document.querySelector('input#cidade').value
+    var cadastros = {}  
+    let tabela = document.querySelector('table#tabela')
+    let nomePessoa = document.querySelector('input#nome').value
+    let email = document.querySelector('input#email').value
+    let tel = document.querySelector('input#tel').value
+    let cidade = document.querySelector('input#cidade').value
     tabela.style.display = 'block'
     cadastros.nome = nomePessoa
     cadastros.email = email
@@ -21,23 +22,18 @@ function cadastrar() {
     cadastros.cid = cidade
     base.push(cadastros)
     //zerando o form
-    document.querySelector('input#nome').value = ''
-    document.querySelector('input#email').value = ''
-    document.querySelector('input#tel').value = ''
-    document.querySelector('input#cidade').value = ''
+    document.querySelector('input').value = ''
     atualizarTab()
 }
 
 function atualizarTab() { /* mostra a lista de cadastro atualizada */
     tot.innerText = base.length
     tab.innerHTML = '' /* zerando a tabela para não duplicar os itens */
-    for (var c = 0 ; c <= base.length ; c++) {
-        var linha = document.createElement('tr')
+    for (let c = 0 ; c < base.length ; c++) {
+        let linha = document.createElement('tr')
         linha.innerHTML = `<th>${c}<td>${base[c].nome} <td>${base[c].email}<td>${base[c].tel}<td>${base[c].cid} <td><button class="del" onclick="del(${c})">X</
 button>`        
         tab.appendChild(linha)              
     }
     
 }
-
-/* testar mudar as variáveis para LET para ver se o erro é extinguido */
