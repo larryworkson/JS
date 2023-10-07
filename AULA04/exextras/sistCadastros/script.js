@@ -20,6 +20,11 @@ function cadastrar() {
     cadastros.tel = tel
     cadastros.cid = cidade
     base.push(cadastros)
+    //zerando o form
+    document.querySelector('input#nome').value = ''
+    document.querySelector('input#email').value = ''
+    document.querySelector('input#tel').value = ''
+    document.querySelector('input#cidade').value = ''
     atualizarTab()
 }
 
